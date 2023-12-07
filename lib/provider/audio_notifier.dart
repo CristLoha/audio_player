@@ -24,7 +24,14 @@ class AudioNotifier extends ChangeNotifier {
 
   void setAudioSourceFromUrl(String url) {
     final audioSource = UrlSource(url);
+    audioPlayer.setSource(audioSource);
     setAudioSource(audioSource);
+  }
+
+  void setAudioFromAsset(String path) {
+    final audioSoure = AssetSource(path);
+    audioPlayer.setSource(audioSoure);
+    setAudioSource(audioSoure);
   }
 
   void _setupAudioListeners() {

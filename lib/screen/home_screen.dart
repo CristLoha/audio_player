@@ -12,9 +12,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final audioProvider = Provider.of<AudioNotifier>(context);
-    const url =
-        'https://github.com/dicodingacademy/assets/raw/main/flutter_intermediate_academy/bensound_ukulele.mp3';
-    audioProvider.setAudioSourceFromUrl(url);
+
+    // ///URL
+    // const url =
+    //     'https://github.com/dicodingacademy/assets/raw/main/flutter_intermediate_academy/bensound_ukulele.mp3';
+    // audioProvider.setAudioSourceFromUrl(url);
+
+    ///PATH
+    const path = 'cricket.wav';
+    audioProvider.setAudioFromAsset(path);
 
     final audioSource = audioProvider.audioSource;
 
